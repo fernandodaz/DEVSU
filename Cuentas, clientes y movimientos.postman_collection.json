@@ -1,0 +1,451 @@
+{
+	"info": {
+		"_postman_id": "13ed4b88-809c-4e8b-ac76-db7c4ec147f9",
+		"name": "Cuentas, clientes y movimientos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25706160"
+	},
+	"item": [
+		{
+			"name": "cuentas",
+			"item": [
+				{
+					"name": "Find all accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_cuentas}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_cuentas}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find account by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_cuentas}}/{{id}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_cuentas}}",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create an account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"numeroCuenta\":\"0134525635654634\",\n    \"tipoCuenta\":\"Ahorros\",\n    \"saldoInicial\":6000,\n    \"estado\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_cuentas}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_cuentas}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch an account",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1,\n    \"tipoCuenta\":\"Corriente\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_cuentas}}/{{id}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_cuentas}}",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put an account",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1,\n    \"numeroCuenta\":12345,\n    \"tipoCuenta\":\"Corriente\",\n    \"saldoInicial\":6000,\n    \"estado\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_cuentas}}/{{id}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_cuentas}}",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an account",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_cuentas}}/{{id}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_cuentas}}",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "clientes",
+			"item": [
+				{
+					"name": "Find all clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_cliente}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_cliente}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find client by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_cliente}}/{{id}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_cliente}}",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_cliente}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_cliente}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch an client",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_cliente}}/{{id}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_cliente}}",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put an client",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_cliente}}/{{id}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_cliente}}",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_cliente}}/{{id}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_cliente}}",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "Find all movements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_movimientos}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_movimientos}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find a movement by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_movimientos}}/{{id}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_movimientos}}",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a movement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cuenta\":{\n        \"id\":3\n    },\n    \"fecha\":\"11/12/2023\",\n    \"tipo\": \"Corriente\",\n    \"movimiento\": \"Retiro\",\n    \"valor\":1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_movimientos}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_movimientos}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch a movement",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_movimientos}}/{{id}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_movimientos}}",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put a movement",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_movimientos}}/{{id}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_movimientos}}",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a movement",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/{{metodo_movimientos}}/{{id}}",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"{{metodo_movimientos}}",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

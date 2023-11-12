@@ -2,16 +2,15 @@ version: '3'
 
 services:
   templateapi:
-    container_name: clientmoduleservice
-    image: clientmoduleservice-img
+    container_name: accountmoduleservice
+    image: accountmoduleservice-img
     build:
       context: ./
       dockerfile: Dockerfile
     ports:
-      - 8081:8080
+      - 8082:8080
     restart: always
     environment:
       - SPRING.DATASOURCE.URL=${DATASOURCE_URL}
       - SPRING.DATASOURCE.USERNAME=${DATASOURCE_USER}
       - SPRING.DATASOURCE.PASSWORD=${DATASOURCE_PASS}
-      - SPRING.JPA.HIBERNATE.DDL-AUTO=${DDL_AUTO}

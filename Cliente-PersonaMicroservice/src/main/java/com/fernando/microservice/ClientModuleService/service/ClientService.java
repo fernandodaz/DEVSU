@@ -10,20 +10,16 @@ import com.fernando.microservice.ClientModuleService.domain.Client;
 import com.fernando.microservice.ClientModuleService.rest.Mapper.ClientMapper;
 import com.fernando.microservice.ClientModuleService.rest.dto.ClientDTO;
 
-import jakarta.persistence.EntityManager;
-
 import java.util.Optional;
 
 @Service
 public class ClientService {
     private final ClientMapper clientMapper;
     private final ClientRepository clientRepository;
-    private final EntityManager em;
 
-    public ClientService(ClientMapper clientMapper, ClientRepository clientRepository, EntityManager em) {
+    public ClientService(ClientMapper clientMapper, ClientRepository clientRepository) {
         this.clientMapper = clientMapper;
         this.clientRepository = clientRepository;
-        this.em = em;
     }
 
     public ClientDTO save(ClientDTO clientDTO) {
@@ -49,7 +45,6 @@ public class ClientService {
 
         Client client = clientMapper.toEntity(clientDTO);
         client = clientRepository.saveAndFlush(client);
-        em.refresh(client);
         return clientMapper.toDto(client);
     }
 
@@ -60,7 +55,6 @@ public class ClientService {
                 .map(existingclient -> {
                     clientMapper.partialUpdate(existingclient, clientDTO);
                     clientRepository.saveAndFlush(existingclient);
-                    em.refresh(existingclient);
                     return existingclient;
                 })
                 .map(clientRepository::save)

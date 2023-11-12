@@ -6,10 +6,10 @@ WORKDIR /usr/src/app
 
 FROM openjdk:17-jdk-slim
 
-ARG JAR_FILE=ClientModuleService-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=AccountModuleService-0.0.1-SNAPSHOT.jar
 
 WORKDIR /opt/app
 
 COPY --from=maven /usr/src/app/target/${JAR_FILE} /opt/app/
 
-ENTRYPOINT ["java","-jar","ClientModuleService-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","AccountModuleService-0.0.1-SNAPSHOT.jar"]

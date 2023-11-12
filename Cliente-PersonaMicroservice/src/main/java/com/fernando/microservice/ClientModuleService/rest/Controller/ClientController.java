@@ -1,33 +1,34 @@
 package com.fernando.microservice.ClientModuleService.rest.Controller;
 
-import com.fernando.microservice.ClientModuleService.domain.Client;
 import com.fernando.microservice.ClientModuleService.repository.ClientRepository;
 import com.fernando.microservice.ClientModuleService.rest.dto.ClientDTO;
+import com.fernando.microservice.ClientModuleService.rest.dto.ReportDTO;
 import com.fernando.microservice.ClientModuleService.service.ClientService;
+import com.fernando.microservice.ClientModuleService.service.ReportService;
 import com.fernando.microservice.ClientModuleService.utils.BadRequestAlertException;
 
 import java.net.URISyntaxException;
 import java.util.Objects;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.HttpClientErrorException.BadRequest;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api")
 public class ClientController {
-    private static final String ENTITY_NAME = "Client";
 
     private final ClientService clientService;
     private final ClientRepository clientRepository;
+    private final ReportService reportService;
 
-    public ClientController(ClientService clientService, ClientRepository clientRepository) {
+    public ClientController(ClientService clientService, ClientRepository clientRepository,
+            ReportService reportService) {
         this.clientService = clientService;
         this.clientRepository = clientRepository;
+        this.reportService = reportService;
     }
 
     @PostMapping("/clientes")
@@ -46,6 +47,14 @@ public class ClientController {
     @GetMapping("/clientes")
     public Page<ClientDTO> readAll(Pageable pageable) {
         return clientService.findAll(pageable);
+    }
+
+    @GetMapping("/reportes")
+    public Page<ReportDTO> getReportsByDateAndClientId(
+            @RequestParam("fecha") String dateRange,
+            @RequestParam("id") Long clientId) {
+
+        return reportService.getReportsByDateAndClientId(dateRange, clientId);
     }
 
     @PutMapping("/clientes/{id}")

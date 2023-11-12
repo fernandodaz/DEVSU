@@ -4,10 +4,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.fernando.microservice</groupId>
-	<artifactId>ClientModuleService</artifactId>
+	<artifactId>AccountModuleService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ClientModuleService</name>
-	<description>Clients and persons Microservice</description>
+	<name>AccountModuleService</name>
+	<description>Accounts and movements Microservice</description>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -64,8 +64,8 @@
 
 		<dependency>
 			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.6.13</version>
+			<artifactId>springdoc-openapi-webflux-ui</artifactId>
+			<version>1.6.3</version>
 		</dependency>
 
 		<dependency>
@@ -87,11 +87,6 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
